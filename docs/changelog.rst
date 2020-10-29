@@ -159,6 +159,11 @@ New features:
 * :doc:`/plugins/web`: add DELETE and PATCH methods for modifying items
 * :doc:`/plugins/lyrics`: Removed LyricWiki source (shut down on 21/09/2020).
 * Added a ``--plugins`` (or ``-p``) flag to specify a list of plugins at startup.
+* Use musicbrainz genre tag api to get genre information.  This currently
+  depends on functionality that is currently unreleased in musicbrainzngs.
+  See https://github.com/alastair/python-musicbrainzngs/pull/247 and
+  https://github.com/alastair/python-musicbrainzngs/pull/266 .
+  Thanks to :user:`aereaux`.
 
 Fixes:
 
@@ -266,6 +271,10 @@ Fixes:
   the current track in the queue.
   Thanks to :user:`aereaux`.
   :bug:`3722`
+* String-typed fields are now normalized to string values, avoiding an
+  occasional crash when using both the :doc:`/plugins/fetchart` and the
+  :doc:`/plugins/discogs` together.
+  :bug:`3773` :bug:`3774`
 * Fix a bug causing PIL to generate poor quality JPEGs when resizing artwork.
   :bug:`3743`
 
